@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { PartyPopper, Sparkles, Menu, X, ShieldCheck, Sun, Moon } from 'lucide-react';
+import { PartyPopper, Sparkles, Menu, X, Sun, Moon } from 'lucide-react';
 
 interface NavbarProps {
   activeTab: string;
   setActiveTab: (tab: string) => void;
-  isAdmin: boolean;
-  setIsAdmin: (isAdmin: boolean) => void;
   onQuickBook?: () => void;
   isDark: boolean;
   toggleTheme: () => void;
@@ -14,8 +12,6 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({
   activeTab,
   setActiveTab,
-  isAdmin,
-  setIsAdmin,
   onQuickBook,
   isDark,
   toggleTheme,
@@ -41,9 +37,9 @@ export const Navbar: React.FC<NavbarProps> = ({
     <header className="sticky top-0 z-40 bg-white/85 dark:bg-slate-950/80 backdrop-blur-xl border-b border-party-purple-100/80 dark:border-white/10 shadow-xs transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          
+
           {/* Logo */}
-          <div 
+          <div
             onClick={() => handleNavClick('home')}
             className="flex items-center gap-3 cursor-pointer group select-none"
           >
@@ -81,8 +77,8 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Desktop Right Actions */}
           <div className="hidden lg:flex items-center gap-3">
-            
-            {/* Theme Toggle Button */}
+
+            {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
               aria-label="Toggle theme"
@@ -94,28 +90,6 @@ export const Navbar: React.FC<NavbarProps> = ({
               ) : (
                 <Moon className="w-4 h-4 text-party-purple-600" />
               )}
-            </button>
-
-            {/* Admin Toggle */}
-            <button
-              onClick={() => {
-                if (!isAdmin) {
-                  setIsAdmin(true);
-                  setActiveTab('admin');
-                } else {
-                  setIsAdmin(false);
-                  setActiveTab('home');
-                }
-              }}
-              className={`flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-semibold border transition-all ${
-                isAdmin || activeTab === 'admin'
-                  ? 'bg-party-purple-600 text-white border-party-purple-600 shadow-glow'
-                  : 'bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-300 border-slate-200 dark:border-slate-800 hover:bg-slate-200 dark:hover:bg-slate-800'
-              }`}
-              title="Toggle Admin View"
-            >
-              <ShieldCheck className="w-3.5 h-3.5" />
-              {isAdmin || activeTab === 'admin' ? 'Admin Mode ON' : 'Admin Access'}
             </button>
 
             {/* Book Now CTA */}
@@ -135,7 +109,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Mobile Right Controls */}
           <div className="flex md:hidden items-center gap-2">
-            {/* Theme Toggle Button Mobile */}
+            {/* Theme Toggle Mobile */}
             <button
               onClick={toggleTheme}
               className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-200 transition"
@@ -146,22 +120,6 @@ export const Navbar: React.FC<NavbarProps> = ({
               ) : (
                 <Moon className="w-4 h-4 text-party-purple-600" />
               )}
-            </button>
-
-            {/* Admin Toggle Mobile */}
-            <button
-              onClick={() => {
-                setIsAdmin(!isAdmin);
-                if (!isAdmin) setActiveTab('admin');
-              }}
-              className={`p-2 rounded-xl text-xs font-medium flex items-center gap-1 border transition ${
-                isAdmin
-                  ? 'bg-party-purple-600 text-white border-party-purple-600'
-                  : 'bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-800'
-              }`}
-            >
-              <ShieldCheck className="w-4 h-4 text-party-purple-500 dark:text-party-purple-400" />
-              <span className="hidden xs:inline">{isAdmin ? 'Admin' : 'Role'}</span>
             </button>
 
             {/* Hamburger Button */}
@@ -193,18 +151,6 @@ export const Navbar: React.FC<NavbarProps> = ({
               {activeTab === link.id && <Sparkles className="w-4 h-4 text-party-pink-500" />}
             </button>
           ))}
-
-          <button
-            onClick={() => handleNavClick('admin')}
-            className={`w-full text-left px-4 py-3 rounded-2xl font-medium text-base flex items-center gap-2 transition ${
-              activeTab === 'admin'
-                ? 'bg-party-purple-600 text-white font-semibold shadow-md'
-                : 'bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800'
-            }`}
-          >
-            <ShieldCheck className="w-4 h-4" />
-            Admin Dashboard
-          </button>
 
           <div className="pt-3">
             <button

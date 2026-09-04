@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { 
   ShieldCheck, Package as PkgIcon, Calendar, Plus, Edit2, Trash2, 
-  Check, X, Eye, Users, Tag, AlertCircle, Clock, Sparkles
+  Check, X, Eye, Users, Tag, AlertCircle, Clock, Sparkles, LogOut, Home
 } from 'lucide-react';
 import { Package, Booking, BookingStatus, Theme } from '../types';
+import { useAdminAuth } from '../context/AdminAuthContext';
 
 interface AdminPageProps {
   packages: Package[];
@@ -24,7 +26,14 @@ export const AdminPage: React.FC<AdminPageProps> = ({
   onDeletePackage,
   onUpdateBookingStatus,
 }) => {
+  const { logout } = useAdminAuth();
+  const navigate = useNavigate();
   const [adminTab, setAdminTab] = useState<'packages' | 'bookings'>('packages');
+
+  const handleLogout = () => {
+    logout();
+    navigate('/admin/login', { replace: true });
+  };
 
   // Package Form Modal State
   const [isPackageModalOpen, setIsPackageModalOpen] = useState<boolean>(false);
@@ -94,6 +103,28 @@ export const AdminPage: React.FC<AdminPageProps> = ({
   };
 
   return (
+    <div className="min-h-screen bg-[#070B14]">
+      {/* Admin Topbar */}
+      <div className="bg-slate-950 border-b border-slate-800 px-6 py-3 flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-party-purple-600 to-party-pink-500 flex items-center justify-center">
+            <ShieldCheck className="w-4 h-4 text-white" />
+          </div>
+          <span className="text-white font-black text-base tracking-tight">BdayBuzz <span className="text-party-pink-400">Admin</span></span>
+        </div>
+        <div className="flex items-center gap-2">
+          <a href="/" className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold text-slate-400 hover:text-white hover:bg-slate-800 transition">
+            <Home className="w-3.5 h-3.5" /> View Site
+          </a>
+          <button
+            onClick={handleLogout}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-red-500/10 text-red-400 hover:bg-red-500/20 border border-red-500/20 transition"
+          >
+            <LogOut className="w-3.5 h-3.5" /> Logout
+          </button>
+        </div>
+      </div>
+
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
       
       {/* Admin Header */}
@@ -479,6 +510,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({
         </div>
       )}
 
+    </div>
     </div>
   );
 };

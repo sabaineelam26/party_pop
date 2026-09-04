@@ -124,7 +124,7 @@ export function App() {
         path="/admin/dashboard"
         element={
           <AdminRoute>
-            <AdminDashboardShell
+            <AdminPage
               packages={packages}
               bookings={bookings}
               themes={themes}
@@ -273,17 +273,6 @@ export function App() {
           />
         )}
 
-        {activeTab === 'admin' && (
-          <AdminPage
-            packages={packages}
-            bookings={bookings}
-            themes={themes}
-            onAddPackage={handleAddPackage}
-            onEditPackage={handleEditPackage}
-            onDeletePackage={handleDeletePackage}
-            onUpdateBookingStatus={handleUpdateBookingStatus}
-          />
-        )}
 
         {activeTab === 'contact' && (
           <ContactPage />
@@ -369,5 +358,8 @@ export function App() {
       />
 
     </div>
+        }
+      />
+    </Routes>
   );
 }
