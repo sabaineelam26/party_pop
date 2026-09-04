@@ -115,7 +115,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                       <Star className="w-3.5 h-3.5 text-party-gold-400 fill-party-gold-400" />
                       Unforgettable Moments Guaranteed
                     </div>
-                    <p className="text-xl font-bold">PartyPop Signature Celebrations</p>
+                    <p className="text-xl font-bold">BdayBuzz Signature Celebrations</p>
                   </div>
                 </div>
 

@@ -103,7 +103,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({
             <ShieldCheck className="w-4 h-4 text-party-pink-400" />
             Simple Administration Control
           </div>
-          <h1 className="text-3xl font-black tracking-tight">PartyPop Admin Panel 🛠️</h1>
+          <h1 className="text-3xl font-black tracking-tight">BdayBuzz Admin Panel 🛠️</h1>
           <p className="text-slate-400 text-xs">
             Manage packages catalog and update customer party booking statuses in real-time.
           </p>

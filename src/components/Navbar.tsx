@@ -28,6 +28,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     { id: 'themes', label: 'Themes' },
     { id: 'how-it-works', label: 'How It Works' },
     { id: 'my-bookings', label: 'My Bookings' },
+    { id: 'contact', label: 'Contact' },
   ];
 
   const handleNavClick = (tabId: string) => {
@@ -47,11 +48,11 @@ export const Navbar: React.FC<NavbarProps> = ({
             className="flex items-center gap-3 cursor-pointer group select-none"
           >
             <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-tr from-party-purple-600 via-party-pink-500 to-party-gold-400 flex items-center justify-center text-white shadow-lg shadow-party-purple-500/25 group-hover:scale-105 group-hover:shadow-glow transition-all duration-300">
-              <span className="text-2xl animate-bounce-slow">🎈</span>
+              <span className="text-sm font-black tracking-tight leading-none">BB</span>
             </div>
             <div>
               <span className="text-2xl font-black tracking-tight text-slate-900 dark:text-white flex items-center gap-1">
-                Party<span className="gradient-text">Pop</span>
+                Bday<span className="gradient-text">Buzz</span>
                 <Sparkles className="w-4 h-4 text-party-gold-500 inline fill-party-gold-400 animate-pulse" />
               </span>
               <p className="text-[10px] font-bold text-party-purple-600 dark:text-party-purple-400 tracking-wider uppercase">Birthday Magic</p>

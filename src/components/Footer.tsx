@@ -17,18 +17,18 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
           {/* Col 1: Brand Info */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-party-purple-600 to-party-pink-500 flex items-center justify-center text-white text-xl shadow-md">
-                🎈
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-party-purple-600 to-party-pink-500 flex items-center justify-center text-white shadow-md">
+                <span className="text-xs font-black tracking-tight leading-none">BB</span>
               </div>
               <span className="text-2xl font-black text-white tracking-tight">
-                Party<span className="text-party-pink-400">Pop</span>
+                Bday<span className="text-party-pink-400">Buzz</span>
               </span>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed">
               Make Every Birthday Unforgettable 🎉
             </p>
             <p className="text-slate-400 text-xs leading-relaxed">
-              PartyPop is your all-in-one birthday party booking platform. Browse custom themes, popular packages, and book your perfect celebration seamlessly.
+              BdayBuzz is your all-in-one birthday party booking platform. Browse custom themes, popular packages, and book your perfect celebration seamlessly.
             </p>
             <div className="flex items-center gap-3 pt-2">
               <a href="#" aria-label="Instagram" className="w-9 h-9 rounded-full bg-slate-900 hover:bg-party-purple-600 text-slate-300 hover:text-white flex items-center justify-center transition-all border border-slate-800">
@@ -78,6 +78,11 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
               <li>
                 <button onClick={() => setActiveTab('my-bookings')} className="hover:text-party-pink-400 transition">
                   My Bookings
+                </button>
+              </li>
+              <li>
+                <button onClick={() => setActiveTab('contact')} className="hover:text-party-pink-400 transition">
+                  Contact Us
                 </button>
               </li>
             </ul>
@@ -138,7 +143,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
 
         {/* Bottom copyright line */}
         <div className="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <p>© 2026 PartyPop. All rights reserved. "Make Every Birthday Unforgettable"</p>
+          <p>© 2026 BdayBuzz. All rights reserved. "Make Every Birthday Unforgettable"</p>
           <p className="flex items-center gap-1">
             Crafted with <Heart className="w-3.5 h-3.5 text-party-pink-500 fill-party-pink-500" /> for perfect celebrations
           </p>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { HomePage } from './pages/HomePage';
@@ -7,8 +8,11 @@ import { ThemesPage } from './pages/ThemesPage';
 import { BookingPage } from './pages/BookingPage';
 import { MyBookingsPage } from './pages/MyBookingsPage';
 import { AdminPage } from './pages/AdminPage';
+import { AdminLoginPage } from './pages/AdminLoginPage';
+import { ContactPage } from './pages/ContactPage';
 import { PackageDetailModal } from './components/PackageDetailModal';
 import { ConfettiModal } from './components/ConfettiModal';
+import { AdminRoute } from './components/AdminRoute';
 
 import { storageService } from './services/storage';
 import { INITIAL_CATEGORIES } from './data/initialData';
@@ -17,7 +21,6 @@ import { Sparkles, Home, Package as PkgIcon, Palette, Calendar, Ticket } from 'l
 
 export function App() {
   const [activeTab, setActiveTab] = useState<string>('home');
-  const [isAdmin, setIsAdmin] = useState<boolean>(false);
 
   // Dark mode state initialized from localStorage or system preference
   const [isDark, setIsDark] = useState<boolean>(() => {
@@ -114,6 +117,32 @@ export function App() {
   };
 
   return (
+    <Routes>
+      {/* ── Admin Routes ───────────────────────────── */}
+      <Route path="/admin/login" element={<AdminLoginPage />} />
+      <Route
+        path="/admin/dashboard"
+        element={
+          <AdminRoute>
+            <AdminDashboardShell
+              packages={packages}
+              bookings={bookings}
+              themes={themes}
+              onAddPackage={handleAddPackage}
+              onEditPackage={handleEditPackage}
+              onDeletePackage={handleDeletePackage}
+              onUpdateBookingStatus={handleUpdateBookingStatus}
+            />
+          </AdminRoute>
+        }
+      />
+      {/* Redirect /admin → /admin/login */}
+      <Route path="/admin" element={<Navigate to="/admin/login" replace />} />
+
+      {/* ── Public App (all other paths) ───────────── */}
+      <Route
+        path="*"
+        element={
     <div className="min-h-screen flex flex-col bg-[#FAFAFC] dark:bg-[#070B14] text-slate-800 dark:text-slate-100 selection:bg-party-purple-500 selection:text-white transition-colors duration-300 relative">
       
       {/* Top Announcement Bar */}
@@ -127,8 +156,6 @@ export function App() {
       <Navbar
         activeTab={activeTab}
         setActiveTab={setActiveTab}
-        isAdmin={isAdmin}
-        setIsAdmin={setIsAdmin}
         isDark={isDark}
         toggleTheme={toggleTheme}
         onQuickBook={() => {
@@ -172,7 +199,7 @@ export function App() {
               <span className="text-xs font-extrabold text-party-purple-600 dark:text-party-purple-400 uppercase tracking-wider bg-party-purple-100 dark:bg-party-purple-950/60 px-3.5 py-1.5 rounded-full border border-party-purple-200 dark:border-party-purple-800">
                 Step-by-Step Guide
               </span>
-              <h1 className="text-4xl font-black text-slate-900 dark:text-white tracking-tight">How PartyPop Works 🎈</h1>
+              <h1 className="text-4xl font-black text-slate-900 dark:text-white tracking-tight">How BdayBuzz Works 🎈</h1>
               <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
                 We make birthday party planning completely effortless. Follow our simple process to host your ideal celebration.
               </p>
@@ -256,6 +283,10 @@ export function App() {
             onDeletePackage={handleDeletePackage}
             onUpdateBookingStatus={handleUpdateBookingStatus}
           />
+        )}
+
+        {activeTab === 'contact' && (
+          <ContactPage />
         )}
       </main>
 
