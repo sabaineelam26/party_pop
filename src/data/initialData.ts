@@ -65,7 +65,7 @@ export const INITIAL_THEMES: Theme[] = [
     id: 'theme-unicorn',
     name: 'Unicorn Theme',
     description: 'Magical pastel colors, glittery horns, rainbow balloons, and fairytale decor.',
-    image: 'https://images.unsplash.com/photo-1531956531700-dc024130f15d?auto=format&fit=crop&q=80&w=600',
+    image: '/theme_unicorn.jpg',
     tag: 'Magical & Pastel'
   },
   {
@@ -86,7 +86,7 @@ export const INITIAL_THEMES: Theme[] = [
     id: 'theme-dinosaur',
     name: 'Dinosaur Theme',
     description: 'Jurassic jungle vines, dino footprints, lush greenery, and exciting safari vibes.',
-    image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&q=80&w=600',
+    image: '/theme_dinosaur.jpg',
     tag: 'Jungle & Safari'
   },
   {
