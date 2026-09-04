@@ -144,9 +144,18 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
         {/* Bottom copyright line */}
         <div className="pt-8 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
           <p>© 2026 BdayBuzz. All rights reserved. "Make Every Birthday Unforgettable"</p>
-          <p className="flex items-center gap-1">
-            Crafted with <Heart className="w-3.5 h-3.5 text-party-pink-500 fill-party-pink-500" /> for perfect celebrations
-          </p>
+          <div className="flex items-center gap-4">
+            <p className="flex items-center gap-1">
+              Crafted with <Heart className="w-3.5 h-3.5 text-party-pink-500 fill-party-pink-500" /> for perfect celebrations
+            </p>
+            <a
+              href="/admin/login"
+              className="text-stone-500 hover:text-party-purple-400 transition-colors duration-200 text-[11px] tracking-wide"
+              title="Staff portal"
+            >
+              Staff Login
+            </a>
+          </div>
         </div>
       </div>
     </footer>
