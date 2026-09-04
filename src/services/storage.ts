@@ -3,7 +3,7 @@ import { INITIAL_PACKAGES, INITIAL_THEMES, INITIAL_BOOKINGS } from '../data/init
 
 const KEYS = {
   PACKAGES: 'partypop_packages_v1',
-  THEMES: 'partypop_themes_v1',
+  THEMES: 'partypop_themes_v2',
   BOOKINGS: 'partypop_bookings_v1',
 };
 
