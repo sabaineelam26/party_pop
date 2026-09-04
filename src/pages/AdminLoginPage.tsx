@@ -38,7 +38,7 @@ export const AdminLoginPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#070B14] flex items-center justify-center px-4 relative overflow-hidden">
+    <div className="min-h-screen bg-[#110B04] flex items-center justify-center px-4 relative overflow-hidden">
 
       {/* Background glow blobs */}
       <div className="absolute -top-32 -left-32 w-96 h-96 bg-party-purple-700/30 rounded-full blur-3xl pointer-events-none" />
@@ -48,7 +48,7 @@ export const AdminLoginPage: React.FC = () => {
       <div className={`relative z-10 w-full max-w-md transition-all duration-300 ${shake ? 'animate-[shake_0.3s_ease-in-out_2]' : ''}`}>
 
         {/* Card */}
-        <div className="bg-slate-900/90 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-2xl p-8 space-y-7">
+        <div className="bg-stone-900/90 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-2xl p-8 space-y-7">
 
           {/* Header */}
           <div className="text-center space-y-3">
@@ -60,7 +60,7 @@ export const AdminLoginPage: React.FC = () => {
                 Admin Portal
                 <Sparkles className="w-4 h-4 text-party-gold-400 animate-pulse" />
               </h1>
-              <p className="text-slate-400 text-sm mt-1">BdayBuzz — Business Dashboard</p>
+              <p className="text-stone-400 text-sm mt-1">BdayBuzz — Business Dashboard</p>
             </div>
           </div>
 
@@ -76,11 +76,11 @@ export const AdminLoginPage: React.FC = () => {
           <form onSubmit={handleSubmit} className="space-y-5">
             {/* Username */}
             <div className="space-y-1.5">
-              <label htmlFor="admin-username" className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+              <label htmlFor="admin-username" className="text-xs font-bold text-stone-400 uppercase tracking-wider">
                 Username
               </label>
               <div className="relative">
-                <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+                <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-500" />
                 <input
                   id="admin-username"
                   type="text"
@@ -89,18 +89,18 @@ export const AdminLoginPage: React.FC = () => {
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   placeholder="Enter username"
-                  className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-950/60 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-party-purple-500 focus:border-transparent transition-all text-sm"
+                  className="w-full pl-10 pr-4 py-3 rounded-xl bg-stone-950/60 border border-stone-800 text-white placeholder-stone-600 focus:outline-none focus:ring-2 focus:ring-party-purple-500 focus:border-transparent transition-all text-sm"
                 />
               </div>
             </div>
 
             {/* Password */}
             <div className="space-y-1.5">
-              <label htmlFor="admin-password" className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+              <label htmlFor="admin-password" className="text-xs font-bold text-stone-400 uppercase tracking-wider">
                 Password
               </label>
               <div className="relative">
-                <Lock className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+                <Lock className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-500" />
                 <input
                   id="admin-password"
                   type={showPassword ? 'text' : 'password'}
@@ -109,12 +109,12 @@ export const AdminLoginPage: React.FC = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter password"
-                  className="w-full pl-10 pr-12 py-3 rounded-xl bg-slate-950/60 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-party-purple-500 focus:border-transparent transition-all text-sm"
+                  className="w-full pl-10 pr-12 py-3 rounded-xl bg-stone-950/60 border border-stone-800 text-white placeholder-stone-600 focus:outline-none focus:ring-2 focus:ring-party-purple-500 focus:border-transparent transition-all text-sm"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300 transition"
+                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-stone-500 hover:text-stone-300 transition"
                   tabIndex={-1}
                   aria-label="Toggle password visibility"
                 >
@@ -151,7 +151,7 @@ export const AdminLoginPage: React.FC = () => {
           <div className="text-center pt-1">
             <a
               href="/"
-              className="text-xs text-slate-500 hover:text-party-purple-400 transition"
+              className="text-xs text-stone-500 hover:text-party-purple-400 transition"
             >
               ← Back to BdayBuzz website
             </a>
@@ -159,7 +159,7 @@ export const AdminLoginPage: React.FC = () => {
         </div>
 
         {/* Footer note */}
-        <p className="text-center text-xs text-slate-600 mt-5">
+        <p className="text-center text-xs text-stone-600 mt-5">
           This portal is for authorised BdayBuzz staff only.
         </p>
       </div>

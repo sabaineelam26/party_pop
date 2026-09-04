@@ -103,9 +103,9 @@ export const AdminPage: React.FC<AdminPageProps> = ({
   };
 
   return (
-    <div className="min-h-screen bg-[#070B14]">
+    <div className="min-h-screen bg-[#110B04]">
       {/* Admin Topbar */}
-      <div className="bg-slate-950 border-b border-slate-800 px-6 py-3 flex items-center justify-between">
+      <div className="bg-stone-950 border-b border-stone-800 px-6 py-3 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-party-purple-600 to-party-pink-500 flex items-center justify-center">
             <ShieldCheck className="w-4 h-4 text-white" />
@@ -113,7 +113,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({
           <span className="text-white font-black text-base tracking-tight">BdayBuzz <span className="text-party-pink-400">Admin</span></span>
         </div>
         <div className="flex items-center gap-2">
-          <a href="/" className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold text-slate-400 hover:text-white hover:bg-slate-800 transition">
+          <a href="/" className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold text-stone-400 hover:text-white hover:bg-stone-800 transition">
             <Home className="w-3.5 h-3.5" /> View Site
           </a>
           <button
@@ -128,26 +128,26 @@ export const AdminPage: React.FC<AdminPageProps> = ({
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
       
       {/* Admin Header */}
-      <div className="bg-slate-900 rounded-3xl p-6 sm:p-8 text-white shadow-xl flex flex-col sm:flex-row sm:items-center justify-between gap-6 border-b-4 border-party-purple-600 border border-slate-800">
+      <div className="bg-stone-900 rounded-3xl p-6 sm:p-8 text-white shadow-xl flex flex-col sm:flex-row sm:items-center justify-between gap-6 border-b-4 border-party-purple-600 border border-stone-800">
         <div className="space-y-2">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-party-purple-800 text-party-pink-300 text-xs font-bold border border-party-purple-700">
             <ShieldCheck className="w-4 h-4 text-party-pink-400" />
             Simple Administration Control
           </div>
           <h1 className="text-3xl font-black tracking-tight">BdayBuzz Admin Panel 🛠️</h1>
-          <p className="text-slate-400 text-xs">
+          <p className="text-stone-400 text-xs">
             Manage packages catalog and update customer party booking statuses in real-time.
           </p>
         </div>
 
         {/* Section Switcher Tabs */}
-        <div className="flex items-center gap-2 bg-slate-800 p-1.5 rounded-2xl border border-slate-700">
+        <div className="flex items-center gap-2 bg-stone-800 p-1.5 rounded-2xl border border-stone-700">
           <button
             onClick={() => setAdminTab('packages')}
             className={`px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 ${
               adminTab === 'packages'
                 ? 'bg-party-purple-600 text-white shadow-md'
-                : 'text-slate-400 hover:text-white'
+                : 'text-stone-400 hover:text-white'
             }`}
           >
             <PkgIcon className="w-4 h-4" />
@@ -159,7 +159,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({
             className={`px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 ${
               adminTab === 'bookings'
                 ? 'bg-party-purple-600 text-white shadow-md'
-                : 'text-slate-400 hover:text-white'
+                : 'text-stone-400 hover:text-white'
             }`}
           >
             <Calendar className="w-4 h-4" />
@@ -172,7 +172,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({
       {adminTab === 'packages' && (
         <div className="space-y-6">
           <div className="flex items-center justify-between">
-            <h2 className="text-xl font-black text-slate-900 dark:text-white">Packages Catalog</h2>
+            <h2 className="text-xl font-black text-stone-900 dark:text-white">Packages Catalog</h2>
             <button
               onClick={openNewPackageModal}
               className="px-5 py-2.5 rounded-2xl bg-gradient-to-r from-party-purple-600 to-party-pink-500 hover:from-party-purple-700 hover:to-party-pink-600 text-white text-xs font-bold shadow-md hover:shadow-glow transition flex items-center gap-1.5"
@@ -186,26 +186,26 @@ export const AdminPage: React.FC<AdminPageProps> = ({
             {packages.map((pkg) => (
               <div
                 key={pkg.id}
-                className="bg-white dark:bg-slate-900/90 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-white/10 shadow-card dark:shadow-card-dark flex flex-col justify-between backdrop-blur-md"
+                className="bg-white dark:bg-stone-900/90 rounded-3xl overflow-hidden border border-stone-200/80 dark:border-white/10 shadow-card dark:shadow-card-dark flex flex-col justify-between backdrop-blur-md"
               >
-                <div className="relative h-44 bg-slate-100 dark:bg-slate-800">
+                <div className="relative h-44 bg-stone-100 dark:bg-stone-800">
                   <img src={pkg.image} alt={pkg.name} className="w-full h-full object-cover" />
-                  <div className="absolute top-3 right-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-black text-party-purple-700 dark:text-party-pink-400 shadow-sm border border-white/20 dark:border-white/10">
+                  <div className="absolute top-3 right-3 bg-white/90 dark:bg-stone-900/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-black text-party-purple-700 dark:text-party-pink-400 shadow-sm border border-white/20 dark:border-white/10">
                     €{pkg.price}
                   </div>
                 </div>
 
                 <div className="p-5 space-y-3 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="font-extrabold text-slate-900 dark:text-white text-lg">{pkg.name}</h3>
-                    <p className="text-slate-500 dark:text-slate-400 text-xs line-clamp-2 mt-1 leading-relaxed">{pkg.description}</p>
+                    <h3 className="font-extrabold text-stone-900 dark:text-white text-lg">{pkg.name}</h3>
+                    <p className="text-stone-500 dark:text-stone-400 text-xs line-clamp-2 mt-1 leading-relaxed">{pkg.description}</p>
                     <p className="text-xs text-party-purple-600 dark:text-party-pink-400 font-semibold mt-2">Up to {pkg.max_guests} guests</p>
                   </div>
 
-                  <div className="pt-3 border-t border-slate-100 dark:border-white/10 flex items-center justify-end gap-2">
+                  <div className="pt-3 border-t border-stone-100 dark:border-white/10 flex items-center justify-end gap-2">
                     <button
                       onClick={() => openEditPackageModal(pkg)}
-                      className="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold transition flex items-center gap-1 border border-slate-200 dark:border-slate-700"
+                      className="px-3 py-1.5 rounded-xl bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 text-xs font-bold transition flex items-center gap-1 border border-stone-200 dark:border-stone-700"
                     >
                       <Edit2 className="w-3.5 h-3.5" />
                       Edit
@@ -234,15 +234,15 @@ export const AdminPage: React.FC<AdminPageProps> = ({
       {adminTab === 'bookings' && (
         <div className="space-y-6">
           <div className="flex items-center justify-between">
-            <h2 className="text-xl font-black text-slate-900 dark:text-white">Customer Bookings List</h2>
-            <span className="text-xs text-slate-500 dark:text-slate-400 font-semibold">Total Requests: {bookings.length}</span>
+            <h2 className="text-xl font-black text-stone-900 dark:text-white">Customer Bookings List</h2>
+            <span className="text-xs text-stone-500 dark:text-stone-400 font-semibold">Total Requests: {bookings.length}</span>
           </div>
 
-          <div className="bg-white dark:bg-slate-900/90 rounded-3xl border border-slate-200/80 dark:border-white/10 shadow-card dark:shadow-card-dark overflow-hidden backdrop-blur-md">
+          <div className="bg-white dark:bg-stone-900/90 rounded-3xl border border-stone-200/80 dark:border-white/10 shadow-card dark:shadow-card-dark overflow-hidden backdrop-blur-md">
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse text-xs">
                 <thead>
-                  <tr className="bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 font-bold border-b border-slate-200 dark:border-slate-700">
+                  <tr className="bg-stone-100 dark:bg-stone-800/80 text-stone-700 dark:text-stone-200 font-bold border-b border-stone-200 dark:border-stone-700">
                     <th className="p-4">Ref ID</th>
                     <th className="p-4">Customer Details</th>
                     <th className="p-4">Birthday Person</th>
@@ -252,23 +252,23 @@ export const AdminPage: React.FC<AdminPageProps> = ({
                     <th className="p-4 text-right">Actions</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+                <tbody className="divide-y divide-stone-100 dark:divide-stone-800">
                   {bookings.map((b) => (
-                    <tr key={b.id} className="hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition">
+                    <tr key={b.id} className="hover:bg-stone-50/80 dark:hover:bg-stone-800/50 transition">
                       <td className="p-4 font-mono font-bold text-party-purple-700 dark:text-party-pink-400">{b.id}</td>
                       <td className="p-4">
-                        <p className="font-extrabold text-slate-900 dark:text-white">{b.customer_name}</p>
-                        <p className="text-slate-500 dark:text-slate-400 text-[11px]">{b.email}</p>
-                        <p className="text-slate-500 dark:text-slate-400 text-[11px]">{b.phone}</p>
+                        <p className="font-extrabold text-stone-900 dark:text-white">{b.customer_name}</p>
+                        <p className="text-stone-500 dark:text-stone-400 text-[11px]">{b.email}</p>
+                        <p className="text-stone-500 dark:text-stone-400 text-[11px]">{b.phone}</p>
                       </td>
-                      <td className="p-4 font-bold text-slate-800 dark:text-slate-200">{b.birthday_person_name}</td>
+                      <td className="p-4 font-bold text-stone-800 dark:text-stone-200">{b.birthday_person_name}</td>
                       <td className="p-4 space-y-0.5">
                         <p className="font-bold text-party-purple-700 dark:text-party-purple-300">{b.package_name}</p>
                         <p className="text-party-pink-600 dark:text-party-pink-400 font-medium text-[11px]">{b.theme_name}</p>
                       </td>
                       <td className="p-4 space-y-0.5">
-                        <p className="font-bold text-slate-800 dark:text-slate-200">{b.event_date}</p>
-                        <p className="text-slate-500 dark:text-slate-400 text-[11px]">{b.guests} Guests</p>
+                        <p className="font-bold text-stone-800 dark:text-stone-200">{b.event_date}</p>
+                        <p className="text-stone-500 dark:text-stone-400 text-[11px]">{b.guests} Guests</p>
                       </td>
                       <td className="p-4">
                         <select
@@ -282,15 +282,15 @@ export const AdminPage: React.FC<AdminPageProps> = ({
                               : 'bg-rose-100 dark:bg-rose-950/60 text-rose-800 dark:text-rose-300 border-rose-300 dark:border-rose-800'
                           }`}
                         >
-                          <option value="Pending" className="dark:bg-slate-900">Pending</option>
-                          <option value="Confirmed" className="dark:bg-slate-900">Confirmed</option>
-                          <option value="Cancelled" className="dark:bg-slate-900">Cancelled</option>
+                          <option value="Pending" className="dark:bg-stone-900">Pending</option>
+                          <option value="Confirmed" className="dark:bg-stone-900">Confirmed</option>
+                          <option value="Cancelled" className="dark:bg-stone-900">Cancelled</option>
                         </select>
                       </td>
                       <td className="p-4 text-right">
                         <button
                           onClick={() => setViewingBooking(b)}
-                          className="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-party-purple-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 hover:text-party-purple-700 dark:hover:text-white font-bold text-xs transition border border-slate-200 dark:border-slate-700"
+                          className="px-3 py-1.5 rounded-xl bg-stone-100 dark:bg-stone-800 hover:bg-party-purple-50 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 hover:text-party-purple-700 dark:hover:text-white font-bold text-xs transition border border-stone-200 dark:border-stone-700"
                         >
                           Inspect
                         </button>
@@ -306,15 +306,15 @@ export const AdminPage: React.FC<AdminPageProps> = ({
 
       {/* Package Create / Edit Modal */}
       {isPackageModalOpen && (
-        <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/70 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn">
-          <div className="bg-white dark:bg-slate-900 rounded-3xl max-w-xl w-full p-6 sm:p-8 space-y-6 shadow-2xl border border-slate-200 dark:border-white/10">
-            <div className="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-white/10">
-              <h3 className="text-xl font-black text-slate-900 dark:text-white">
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-stone-950/70 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn">
+          <div className="bg-white dark:bg-stone-900 rounded-3xl max-w-xl w-full p-6 sm:p-8 space-y-6 shadow-2xl border border-stone-200 dark:border-white/10">
+            <div className="flex items-center justify-between pb-4 border-b border-stone-100 dark:border-white/10">
+              <h3 className="text-xl font-black text-stone-900 dark:text-white">
                 {editingPkg ? 'Edit Package' : 'Create New Package'}
               </h3>
               <button
                 onClick={() => setIsPackageModalOpen(false)}
-                className="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 flex items-center justify-center text-sm font-bold transition"
+                className="w-8 h-8 rounded-full bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 text-stone-600 dark:text-stone-300 flex items-center justify-center text-sm font-bold transition"
               >
                 ✕
               </button>
@@ -322,73 +322,73 @@ export const AdminPage: React.FC<AdminPageProps> = ({
 
             <form onSubmit={handleSavePackage} className="space-y-4 text-xs">
               <div>
-                <label className="block font-bold text-slate-700 dark:text-slate-300 mb-1">Package Name</label>
+                <label className="block font-bold text-stone-700 dark:text-stone-300 mb-1">Package Name</label>
                 <input
                   type="text"
                   required
                   placeholder="e.g. VIP Carnival Blast"
                   value={pkgName}
                   onChange={(e) => setPkgName(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-white text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-party-purple-500"
+                  className="w-full px-4 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-950/60 border border-stone-200 dark:border-stone-800 text-stone-800 dark:text-white text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-party-purple-500"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block font-bold text-slate-700 dark:text-slate-300 mb-1">Starting Price (€)</label>
+                  <label className="block font-bold text-stone-700 dark:text-stone-300 mb-1">Starting Price (€)</label>
                   <input
                     type="number"
                     required
                     min="1"
                     value={pkgPrice}
                     onChange={(e) => setPkgPrice(Number(e.target.value))}
-                    className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-white text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-party-purple-500"
+                    className="w-full px-4 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-950/60 border border-stone-200 dark:border-stone-800 text-stone-800 dark:text-white text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-party-purple-500"
                   />
                 </div>
                 <div>
-                  <label className="block font-bold text-slate-700 dark:text-slate-300 mb-1">Max Guests</label>
+                  <label className="block font-bold text-stone-700 dark:text-stone-300 mb-1">Max Guests</label>
                   <input
                     type="number"
                     required
                     min="1"
                     value={pkgGuests}
                     onChange={(e) => setPkgGuests(Number(e.target.value))}
-                    className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-white text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-party-purple-500"
+                    className="w-full px-4 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-950/60 border border-stone-200 dark:border-stone-800 text-stone-800 dark:text-white text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-party-purple-500"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block font-bold text-slate-700 dark:text-slate-300 mb-1">Image URL</label>
+                <label className="block font-bold text-stone-700 dark:text-stone-300 mb-1">Image URL</label>
                 <input
                   type="url"
                   placeholder="https://images.unsplash.com/..."
                   value={pkgImage}
                   onChange={(e) => setPkgImage(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-white text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-party-purple-500"
+                  className="w-full px-4 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-950/60 border border-stone-200 dark:border-stone-800 text-stone-800 dark:text-white text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-party-purple-500"
                 />
               </div>
 
               <div>
-                <label className="block font-bold text-slate-700 dark:text-slate-300 mb-1">Included Features (comma-separated)</label>
+                <label className="block font-bold text-stone-700 dark:text-stone-300 mb-1">Included Features (comma-separated)</label>
                 <textarea
                   rows={2}
                   placeholder="Theme Balloons, Custom Cake, Music System, Party Games"
                   value={pkgIncludesStr}
                   onChange={(e) => setPkgIncludesStr(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-white text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-party-purple-500"
+                  className="w-full px-4 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-950/60 border border-stone-200 dark:border-stone-800 text-stone-800 dark:text-white text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-party-purple-500"
                 ></textarea>
               </div>
 
               <div>
-                <label className="block font-bold text-slate-700 dark:text-slate-300 mb-1">Short Description</label>
+                <label className="block font-bold text-stone-700 dark:text-stone-300 mb-1">Short Description</label>
                 <textarea
                   rows={3}
                   required
                   placeholder="Comprehensive description of package features..."
                   value={pkgDesc}
                   onChange={(e) => setPkgDesc(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-white text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-party-purple-500"
+                  className="w-full px-4 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-950/60 border border-stone-200 dark:border-stone-800 text-stone-800 dark:text-white text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-party-purple-500"
                 ></textarea>
               </div>
 
@@ -396,7 +396,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({
                 <button
                   type="button"
                   onClick={() => setIsPackageModalOpen(false)}
-                  className="px-5 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold hover:bg-slate-200 dark:hover:bg-slate-700 transition"
+                  className="px-5 py-2.5 rounded-xl bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 font-bold hover:bg-stone-200 dark:hover:bg-stone-700 transition"
                 >
                   Cancel
                 </button>
@@ -414,50 +414,50 @@ export const AdminPage: React.FC<AdminPageProps> = ({
 
       {/* Inspect Customer Booking Details Modal */}
       {viewingBooking && (
-        <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/70 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn">
-          <div className="bg-white dark:bg-slate-900 rounded-3xl max-w-lg w-full p-6 sm:p-8 space-y-6 shadow-2xl border border-slate-200 dark:border-white/10">
-            <div className="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-white/10">
-              <h3 className="text-xl font-black text-slate-900 dark:text-white">Admin Booking Inspection</h3>
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-stone-950/70 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn">
+          <div className="bg-white dark:bg-stone-900 rounded-3xl max-w-lg w-full p-6 sm:p-8 space-y-6 shadow-2xl border border-stone-200 dark:border-white/10">
+            <div className="flex items-center justify-between pb-4 border-b border-stone-100 dark:border-white/10">
+              <h3 className="text-xl font-black text-stone-900 dark:text-white">Admin Booking Inspection</h3>
               <button
                 onClick={() => setViewingBooking(null)}
-                className="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 flex items-center justify-center font-bold transition"
+                className="w-8 h-8 rounded-full bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 text-stone-600 dark:text-stone-300 flex items-center justify-center font-bold transition"
               >
                 ✕
               </button>
             </div>
 
-            <div className="space-y-3 text-xs text-slate-700 dark:text-slate-300">
-              <div className="flex justify-between items-center bg-slate-50 dark:bg-slate-950/60 p-3 rounded-xl border border-slate-100 dark:border-white/5">
-                <span className="font-bold text-slate-500 dark:text-slate-400">Booking Ref</span>
+            <div className="space-y-3 text-xs text-stone-700 dark:text-stone-300">
+              <div className="flex justify-between items-center bg-stone-50 dark:bg-stone-950/60 p-3 rounded-xl border border-stone-100 dark:border-white/5">
+                <span className="font-bold text-stone-500 dark:text-stone-400">Booking Ref</span>
                 <span className="font-mono font-bold text-party-purple-700 dark:text-party-pink-400">{viewingBooking.id}</span>
               </div>
               <div className="flex justify-between">
-                <span className="font-semibold text-slate-500 dark:text-slate-400">Customer Name:</span>
-                <span className="font-bold text-slate-900 dark:text-white">{viewingBooking.customer_name}</span>
+                <span className="font-semibold text-stone-500 dark:text-stone-400">Customer Name:</span>
+                <span className="font-bold text-stone-900 dark:text-white">{viewingBooking.customer_name}</span>
               </div>
               <div className="flex justify-between">
-                <span className="font-semibold text-slate-500 dark:text-slate-400">Customer Email:</span>
-                <span className="font-bold text-slate-900 dark:text-white">{viewingBooking.email}</span>
+                <span className="font-semibold text-stone-500 dark:text-stone-400">Customer Email:</span>
+                <span className="font-bold text-stone-900 dark:text-white">{viewingBooking.email}</span>
               </div>
               <div className="flex justify-between">
-                <span className="font-semibold text-slate-500 dark:text-slate-400">Customer Phone:</span>
-                <span className="font-bold text-slate-900 dark:text-white">{viewingBooking.phone}</span>
+                <span className="font-semibold text-stone-500 dark:text-stone-400">Customer Phone:</span>
+                <span className="font-bold text-stone-900 dark:text-white">{viewingBooking.phone}</span>
               </div>
               <div className="flex justify-between">
-                <span className="font-semibold text-slate-500 dark:text-slate-400">Birthday Person:</span>
-                <span className="font-bold text-slate-900 dark:text-white">{viewingBooking.birthday_person_name}</span>
+                <span className="font-semibold text-stone-500 dark:text-stone-400">Birthday Person:</span>
+                <span className="font-bold text-stone-900 dark:text-white">{viewingBooking.birthday_person_name}</span>
               </div>
               <div className="flex justify-between">
-                <span className="font-semibold text-slate-500 dark:text-slate-400">Selected Package:</span>
+                <span className="font-semibold text-stone-500 dark:text-stone-400">Selected Package:</span>
                 <span className="font-bold text-party-purple-700 dark:text-party-pink-400">{viewingBooking.package_name}</span>
               </div>
               <div className="flex justify-between">
-                <span className="font-semibold text-slate-500 dark:text-slate-400">Selected Theme:</span>
+                <span className="font-semibold text-stone-500 dark:text-stone-400">Selected Theme:</span>
                 <span className="font-bold text-party-pink-600 dark:text-party-pink-400">{viewingBooking.theme_name}</span>
               </div>
               {viewingBooking.selected_addons && viewingBooking.selected_addons.length > 0 && (
                 <div className="flex justify-between">
-                  <span className="font-semibold text-slate-500 dark:text-slate-400">Selected Add-ons ({viewingBooking.selected_addons.length}):</span>
+                  <span className="font-semibold text-stone-500 dark:text-stone-400">Selected Add-ons ({viewingBooking.selected_addons.length}):</span>
                   <span className="font-bold text-party-purple-700 dark:text-party-pink-400">+€{viewingBooking.addons_price || 0}</span>
                 </div>
               )}
@@ -468,12 +468,12 @@ export const AdminPage: React.FC<AdminPageProps> = ({
                 </div>
               )}
               <div className="flex justify-between">
-                <span className="font-semibold text-slate-500 dark:text-slate-400">Event Date:</span>
-                <span className="font-bold text-slate-900 dark:text-white">{viewingBooking.event_date}</span>
+                <span className="font-semibold text-stone-500 dark:text-stone-400">Event Date:</span>
+                <span className="font-bold text-stone-900 dark:text-white">{viewingBooking.event_date}</span>
               </div>
               <div className="flex justify-between">
-                <span className="font-semibold text-slate-500 dark:text-slate-400">Guest Count:</span>
-                <span className="font-bold text-slate-900 dark:text-white">{viewingBooking.guests}</span>
+                <span className="font-semibold text-stone-500 dark:text-stone-400">Guest Count:</span>
+                <span className="font-bold text-stone-900 dark:text-white">{viewingBooking.guests}</span>
               </div>
               {viewingBooking.special_request && (
                 <div className="bg-amber-50 dark:bg-amber-950/40 p-3 rounded-xl border border-amber-200 dark:border-amber-900">
@@ -483,9 +483,9 @@ export const AdminPage: React.FC<AdminPageProps> = ({
               )}
             </div>
 
-            <div className="pt-4 border-t border-slate-100 dark:border-white/10 flex items-center justify-between">
+            <div className="pt-4 border-t border-stone-100 dark:border-white/10 flex items-center justify-between">
               <div>
-                <span className="text-xs text-slate-400 dark:text-slate-500 block font-bold">Update Status:</span>
+                <span className="text-xs text-stone-400 dark:text-stone-500 block font-bold">Update Status:</span>
                 <div className="flex items-center gap-2 mt-1">
                   {(['Pending', 'Confirmed', 'Cancelled'] as BookingStatus[]).map((st) => (
                     <button
@@ -497,7 +497,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({
                       className={`px-3 py-1 rounded-lg text-xs font-bold transition ${
                         viewingBooking.status === st
                           ? 'bg-party-purple-600 text-white shadow-sm'
-                          : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+                          : 'bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:bg-stone-200 dark:hover:bg-stone-700'
                       }`}
                     >
                       {st}

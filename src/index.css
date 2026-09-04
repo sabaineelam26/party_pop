@@ -4,21 +4,22 @@
 
 @layer base {
   body {
-    @apply bg-[#FAFAFC] dark:bg-[#070B14] text-slate-800 dark:text-slate-100 antialiased overflow-x-hidden transition-colors duration-300;
+    @apply bg-[#FDFAF7] dark:bg-[#110B04] text-stone-800 dark:text-stone-100 antialiased overflow-x-hidden transition-colors duration-300;
   }
 }
 
-/* Custom festive styling effects */
+/* Subtle dot grid — warm coral dots */
 .bg-grid-pattern {
-  background-image: radial-gradient(rgba(124, 58, 237, 0.09) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(208, 61, 36, 0.08) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
 .dark .bg-grid-pattern {
-  background-image: radial-gradient(rgba(167, 139, 250, 0.12) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(232, 83, 58, 0.10) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
+/* Gradient text — coral → amber */
 .gradient-text {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-party-purple-600 via-party-pink-500 to-party-gold-500 dark:from-party-purple-400 dark:via-party-pink-400 dark:to-party-gold-300;
 }
@@ -28,15 +29,15 @@
 }
 
 .glass-panel {
-  @apply bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 shadow-soft dark:shadow-card-dark;
+  @apply bg-white/80 dark:bg-stone-900/80 backdrop-blur-xl border border-stone-200/80 dark:border-white/10 shadow-soft dark:shadow-card-dark;
 }
 
 .glass-card {
-  @apply bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200/60 dark:border-white/10 shadow-card dark:shadow-card-dark transition-all duration-300;
+  @apply bg-white/90 dark:bg-stone-900/90 backdrop-blur-md border border-stone-200/60 dark:border-white/10 shadow-card dark:shadow-card-dark transition-all duration-300;
 }
 
 .glass-input {
-  @apply bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-party-purple-500 dark:focus:ring-party-purple-400 focus:bg-white dark:focus:bg-slate-900 transition-all;
+  @apply bg-stone-50 dark:bg-stone-950/60 border border-stone-200 dark:border-stone-800 text-stone-900 dark:text-white placeholder-stone-400 dark:placeholder-stone-500 focus:outline-none focus:ring-2 focus:ring-party-purple-500 dark:focus:ring-party-purple-400 focus:bg-white dark:focus:bg-stone-900 transition-all;
 }
 
 .shimmer-button {
@@ -55,22 +56,22 @@
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f1f7;
+  background: #f5f0eb;
 }
 .dark ::-webkit-scrollbar-track {
-  background: #0d121f;
+  background: #1a1108;
 }
 ::-webkit-scrollbar-thumb {
-  background: #c4b5fd;
+  background: #ffaa93;
   border-radius: 4px;
 }
 .dark ::-webkit-scrollbar-thumb {
-  background: #372865;
+  background: #5c2217;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #8b5cf6;
+  background: #e8533a;
 }
 .dark ::-webkit-scrollbar-thumb:hover {
-  background: #7c3aed;
+  background: #d03d24;
 }

@@ -143,11 +143,11 @@ export function App() {
       <Route
         path="*"
         element={
-    <div className="min-h-screen flex flex-col bg-[#FAFAFC] dark:bg-[#070B14] text-slate-800 dark:text-slate-100 selection:bg-party-purple-500 selection:text-white transition-colors duration-300 relative">
+    <div className="min-h-screen flex flex-col bg-[#FDFAF7] dark:bg-[#110B04] text-stone-800 dark:text-stone-100 selection:bg-party-purple-500 selection:text-white transition-colors duration-300 relative">
       
       {/* Top Announcement Bar */}
-      <div className="bg-gradient-to-r from-party-purple-700 via-party-pink-600 to-party-purple-800 dark:from-party-purple-950 dark:via-party-pink-900 dark:to-party-purple-950 text-white py-2 px-4 text-center text-xs font-bold flex items-center justify-center gap-2 shadow-xs border-b border-white/10">
-        <Sparkles className="w-3.5 h-3.5 text-party-gold-300 animate-pulse shrink-0" />
+      <div className="bg-gradient-to-r from-party-purple-700 via-party-pink-600 to-party-purple-700 dark:from-party-purple-950 dark:via-party-purple-900 dark:to-party-purple-950 text-white py-2 px-4 text-center text-xs font-bold flex items-center justify-center gap-2 shadow-xs border-b border-white/10">
+        <Sparkles className="w-3.5 h-3.5 text-party-gold-200 animate-pulse shrink-0" />
         <span className="truncate">🎉 Special Offer: Get free custom photography corner with all Premium & Luxury bookings!</span>
         <span className="hidden sm:inline-block bg-white/20 px-2 py-0.5 rounded-full text-[10px] tracking-wide font-mono">CODE: POP2026</span>
       </div>

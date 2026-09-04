@@ -47,7 +47,7 @@ export const ContactPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#FAFAFC] dark:bg-[#070B14] animate-fadeIn">
+    <div className="min-h-screen bg-[#FDFAF7] dark:bg-[#110B04] animate-fadeIn">
 
       {/* Hero Banner */}
       <div className="relative overflow-hidden bg-gradient-to-br from-party-purple-700 via-party-pink-600 to-party-purple-800 py-20 px-4 text-center">
@@ -117,8 +117,8 @@ export const ContactPage: React.FC = () => {
               </div>
               <div>
                 <p className="text-xs font-bold text-party-purple-600 dark:text-party-purple-400 uppercase tracking-wider mb-1">{label}</p>
-                <p className="text-slate-900 dark:text-white font-bold text-base">{value}</p>
-                <p className="text-slate-500 dark:text-slate-400 text-xs mt-0.5">{sub}</p>
+                <p className="text-stone-900 dark:text-white font-bold text-base">{value}</p>
+                <p className="text-stone-500 dark:text-stone-400 text-xs mt-0.5">{sub}</p>
               </div>
             </a>
           ))}
@@ -130,8 +130,8 @@ export const ContactPage: React.FC = () => {
           {/* Form */}
           <div className="lg:col-span-3 glass-card rounded-3xl p-8 space-y-6">
             <div>
-              <h2 className="text-2xl font-black text-slate-900 dark:text-white tracking-tight">Send Us a Message</h2>
-              <p className="text-slate-500 dark:text-slate-400 text-sm mt-1">Fill in the form below and we'll get back to you within 2 hours.</p>
+              <h2 className="text-2xl font-black text-stone-900 dark:text-white tracking-tight">Send Us a Message</h2>
+              <p className="text-stone-500 dark:text-stone-400 text-sm mt-1">Fill in the form below and we'll get back to you within 2 hours.</p>
             </div>
 
             {submitted ? (
@@ -139,8 +139,8 @@ export const ContactPage: React.FC = () => {
                 <div className="w-20 h-20 rounded-full bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center">
                   <CheckCircle2 className="w-10 h-10 text-emerald-500" />
                 </div>
-                <h3 className="text-xl font-black text-slate-900 dark:text-white">Message Sent! 🎉</h3>
-                <p className="text-slate-500 dark:text-slate-400 text-sm max-w-xs">
+                <h3 className="text-xl font-black text-stone-900 dark:text-white">Message Sent! 🎉</h3>
+                <p className="text-stone-500 dark:text-stone-400 text-sm max-w-xs">
                   Thanks for reaching out, <strong>{form.name}</strong>! Our team will reply to <strong>{form.email}</strong> within 2 hours.
                 </p>
                 <button
@@ -154,7 +154,7 @@ export const ContactPage: React.FC = () => {
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div className="space-y-1.5">
-                    <label className="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wide">Full Name *</label>
+                    <label className="text-xs font-bold text-stone-700 dark:text-stone-300 uppercase tracking-wide">Full Name *</label>
                     <input
                       id="contact-name"
                       name="name"
@@ -167,7 +167,7 @@ export const ContactPage: React.FC = () => {
                     />
                   </div>
                   <div className="space-y-1.5">
-                    <label className="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wide">Email Address *</label>
+                    <label className="text-xs font-bold text-stone-700 dark:text-stone-300 uppercase tracking-wide">Email Address *</label>
                     <input
                       id="contact-email"
                       name="email"
@@ -183,7 +183,7 @@ export const ContactPage: React.FC = () => {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div className="space-y-1.5">
-                    <label className="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wide">Phone Number</label>
+                    <label className="text-xs font-bold text-stone-700 dark:text-stone-300 uppercase tracking-wide">Phone Number</label>
                     <input
                       id="contact-phone"
                       name="phone"
@@ -195,7 +195,7 @@ export const ContactPage: React.FC = () => {
                     />
                   </div>
                   <div className="space-y-1.5">
-                    <label className="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wide">Subject *</label>
+                    <label className="text-xs font-bold text-stone-700 dark:text-stone-300 uppercase tracking-wide">Subject *</label>
                     <select
                       id="contact-subject"
                       name="subject"
@@ -216,7 +216,7 @@ export const ContactPage: React.FC = () => {
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wide">Message *</label>
+                  <label className="text-xs font-bold text-stone-700 dark:text-stone-300 uppercase tracking-wide">Message *</label>
                   <textarea
                     id="contact-message"
                     name="message"
@@ -274,7 +274,7 @@ export const ContactPage: React.FC = () => {
             <div className="glass-card rounded-3xl p-6 space-y-4">
               <div className="flex items-center gap-2">
                 <MessageSquare className="w-5 h-5 text-party-purple-500" />
-                <h3 className="font-black text-slate-900 dark:text-white text-base">Follow Us</h3>
+                <h3 className="font-black text-stone-900 dark:text-white text-base">Follow Us</h3>
               </div>
               <div className="flex flex-col gap-3">
                 {[
@@ -285,14 +285,14 @@ export const ContactPage: React.FC = () => {
                   <a
                     key={sub}
                     href={href}
-                    className="flex items-center gap-3 group hover:bg-slate-50 dark:hover:bg-slate-800/60 p-2 rounded-xl transition-all"
+                    className="flex items-center gap-3 group hover:bg-stone-50 dark:hover:bg-stone-800/60 p-2 rounded-xl transition-all"
                   >
                     <div className={`w-9 h-9 rounded-xl bg-gradient-to-br ${color} flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform`}>
                       <Icon className="w-4 h-4 text-white" />
                     </div>
                     <div>
-                      <p className="text-slate-900 dark:text-white text-sm font-bold">{label}</p>
-                      <p className="text-slate-400 text-xs">{sub}</p>
+                      <p className="text-stone-900 dark:text-white text-sm font-bold">{label}</p>
+                      <p className="text-stone-400 text-xs">{sub}</p>
                     </div>
                   </a>
                 ))}
@@ -307,27 +307,27 @@ export const ContactPage: React.FC = () => {
             <span className="text-xs font-extrabold text-party-purple-600 dark:text-party-purple-400 uppercase tracking-wider bg-party-purple-100 dark:bg-party-purple-950/60 px-4 py-1.5 rounded-full border border-party-purple-200 dark:border-party-purple-800">
               FAQ
             </span>
-            <h2 className="text-3xl font-black text-slate-900 dark:text-white tracking-tight">Frequently Asked Questions</h2>
-            <p className="text-slate-500 dark:text-slate-400 text-sm">Quick answers to the questions we hear most often.</p>
+            <h2 className="text-3xl font-black text-stone-900 dark:text-white tracking-tight">Frequently Asked Questions</h2>
+            <p className="text-stone-500 dark:text-stone-400 text-sm">Quick answers to the questions we hear most often.</p>
           </div>
 
           <div className="space-y-3">
             {faqs.map((faq, i) => (
               <div
                 key={i}
-                className="glass-card rounded-2xl overflow-hidden border border-slate-200/60 dark:border-white/10"
+                className="glass-card rounded-2xl overflow-hidden border border-stone-200/60 dark:border-white/10"
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex items-center justify-between px-6 py-4 text-left gap-4 hover:bg-slate-50/80 dark:hover:bg-slate-800/40 transition-colors"
+                  className="w-full flex items-center justify-between px-6 py-4 text-left gap-4 hover:bg-stone-50/80 dark:hover:bg-stone-800/40 transition-colors"
                 >
-                  <span className="font-bold text-slate-900 dark:text-white text-sm">{faq.q}</span>
+                  <span className="font-bold text-stone-900 dark:text-white text-sm">{faq.q}</span>
                   <ChevronDown
                     className={`w-4 h-4 text-party-purple-500 shrink-0 transition-transform duration-300 ${openFaq === i ? 'rotate-180' : ''}`}
                   />
                 </button>
                 <div className={`overflow-hidden transition-all duration-300 ${openFaq === i ? 'max-h-40' : 'max-h-0'}`}>
-                  <p className="px-6 pb-4 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{faq.a}</p>
+                  <p className="px-6 pb-4 text-stone-600 dark:text-stone-300 text-sm leading-relaxed">{faq.a}</p>
                 </div>
               </div>
             ))}

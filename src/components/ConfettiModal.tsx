@@ -40,8 +40,8 @@ export const ConfettiModal: React.FC<ConfettiModalProps> = ({
   if (!booking) return null;
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/75 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn">
-      <div className="relative bg-white dark:bg-slate-900 rounded-3xl max-w-lg w-full p-6 sm:p-8 text-center shadow-2xl border border-party-purple-100 dark:border-white/10">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-stone-950/75 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn">
+      <div className="relative bg-white dark:bg-stone-900 rounded-3xl max-w-lg w-full p-6 sm:p-8 text-center shadow-2xl border border-party-purple-100 dark:border-white/10">
         
         {/* Animated Celebration Icon */}
         <div className="mx-auto w-20 h-20 rounded-3xl bg-gradient-to-tr from-party-purple-600 via-party-pink-500 to-party-gold-400 flex items-center justify-center text-white text-3xl shadow-xl shadow-party-purple-300 dark:shadow-party-purple-950 mb-6 animate-bounce-slow">
@@ -49,7 +49,7 @@ export const ConfettiModal: React.FC<ConfettiModalProps> = ({
         </div>
 
         {/* Headline */}
-        <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight mb-3">
+        <h2 className="text-2xl sm:text-3xl font-black text-stone-900 dark:text-white tracking-tight mb-3">
           Congratulations!
         </h2>
 
@@ -61,22 +61,22 @@ export const ConfettiModal: React.FC<ConfettiModalProps> = ({
         </div>
 
         {/* Booking Reference Card */}
-        <div className="bg-slate-50 dark:bg-slate-950/60 p-4 rounded-2xl border border-slate-200 dark:border-slate-800 text-left space-y-2 mb-6 text-xs text-slate-600 dark:text-slate-300">
-          <div className="flex justify-between items-center pb-2 border-b border-slate-200 dark:border-slate-800 font-bold text-slate-800 dark:text-white">
+        <div className="bg-stone-50 dark:bg-stone-950/60 p-4 rounded-2xl border border-stone-200 dark:border-stone-800 text-left space-y-2 mb-6 text-xs text-stone-600 dark:text-stone-300">
+          <div className="flex justify-between items-center pb-2 border-b border-stone-200 dark:border-stone-800 font-bold text-stone-800 dark:text-white">
             <span>Booking Reference:</span>
             <span className="text-party-purple-700 dark:text-party-pink-400 bg-party-purple-100 dark:bg-party-purple-950/80 px-2.5 py-0.5 rounded-full font-mono text-sm border border-party-purple-200 dark:border-party-purple-800">{booking.id}</span>
           </div>
           <div className="flex justify-between">
             <span>Birthday Person:</span>
-            <span className="font-semibold text-slate-800 dark:text-slate-200">{booking.birthday_person_name}</span>
+            <span className="font-semibold text-stone-800 dark:text-stone-200">{booking.birthday_person_name}</span>
           </div>
           <div className="flex justify-between">
             <span>Selected Package:</span>
-            <span className="font-semibold text-slate-800 dark:text-slate-200">{booking.package_name}</span>
+            <span className="font-semibold text-stone-800 dark:text-stone-200">{booking.package_name}</span>
           </div>
           <div className="flex justify-between">
             <span>Selected Theme:</span>
-            <span className="font-semibold text-slate-800 dark:text-slate-200">{booking.theme_name}</span>
+            <span className="font-semibold text-stone-800 dark:text-stone-200">{booking.theme_name}</span>
           </div>
           {booking.selected_addons && booking.selected_addons.length > 0 && (
             <div className="flex justify-between">
@@ -92,9 +92,9 @@ export const ConfettiModal: React.FC<ConfettiModalProps> = ({
           )}
           <div className="flex justify-between">
             <span>Event Date:</span>
-            <span className="font-semibold text-slate-800 dark:text-slate-200">{booking.event_date}</span>
+            <span className="font-semibold text-stone-800 dark:text-stone-200">{booking.event_date}</span>
           </div>
-          <div className="flex justify-between pt-2 border-t border-slate-200 dark:border-slate-800 text-sm font-extrabold text-slate-900 dark:text-white">
+          <div className="flex justify-between pt-2 border-t border-stone-200 dark:border-stone-800 text-sm font-extrabold text-stone-900 dark:text-white">
             <span>Total Estimated Price:</span>
             <span className="text-party-purple-700 dark:text-party-pink-400">€{booking.estimated_price}</span>
           </div>
@@ -118,7 +118,7 @@ export const ConfettiModal: React.FC<ConfettiModalProps> = ({
               onClose();
               onGoHome();
             }}
-            className="w-full py-3 px-4 rounded-2xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-bold transition-all flex items-center justify-center gap-2 border border-slate-200 dark:border-slate-700"
+            className="w-full py-3 px-4 rounded-2xl bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 text-sm font-bold transition-all flex items-center justify-center gap-2 border border-stone-200 dark:border-stone-700"
           >
             <Home className="w-4 h-4" />
             Return Home

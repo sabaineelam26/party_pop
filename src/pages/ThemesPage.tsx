@@ -30,10 +30,10 @@ export const ThemesPage: React.FC<ThemesPageProps> = ({
           <Palette className="w-4 h-4 text-party-pink-600 dark:text-party-pink-400" />
           Party Theme Gallery
         </div>
-        <h1 className="text-4xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
+        <h1 className="text-4xl sm:text-5xl font-black text-stone-900 dark:text-white tracking-tight">
           Birthday Party <span className="gradient-text">Themes</span> 🎨
         </h1>
-        <p className="text-slate-600 dark:text-slate-300 text-base leading-relaxed">
+        <p className="text-stone-600 dark:text-stone-300 text-base leading-relaxed">
           Transform your party venue with our handcrafted theme decorations. Choose your favorite theme below to customize your booking.
         </p>
       </div>
@@ -57,7 +57,7 @@ export const ThemesPage: React.FC<ThemesPageProps> = ({
             Bespoke Event Styling
           </span>
           <h3 className="text-2xl sm:text-3xl font-black tracking-tight">Don't see your dream theme?</h3>
-          <p className="text-white/90 dark:text-slate-200 text-sm max-w-xl">
+          <p className="text-white/90 dark:text-stone-200 text-sm max-w-xl">
             We offer 100% custom theme creation! Select any package and write your unique theme request in the booking notes.
           </p>
         </div>
@@ -67,7 +67,7 @@ export const ThemesPage: React.FC<ThemesPageProps> = ({
             const firstTheme = themes[0];
             if (firstTheme) handleSelect(firstTheme);
           }}
-          className="px-6 py-3.5 rounded-2xl bg-white hover:bg-party-gold-400 text-party-purple-900 hover:text-slate-950 font-extrabold text-sm shadow-lg hover:shadow-xl hover:scale-105 transition-all shrink-0 flex items-center gap-2 group"
+          className="px-6 py-3.5 rounded-2xl bg-white hover:bg-party-gold-400 text-party-purple-900 hover:text-stone-950 font-extrabold text-sm shadow-lg hover:shadow-xl hover:scale-105 transition-all shrink-0 flex items-center gap-2 group"
         >
           <span>Choose Theme & Start Booking</span>
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
